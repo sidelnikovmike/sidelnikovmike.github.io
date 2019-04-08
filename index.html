@@ -5,6 +5,30 @@
     <title>Test interstitial page</title>
 </head>
 <body>
+    
+    
 Test 3
+    
+<script>
+(function() {
+    var url = new URL(window.location.href);
+    
+    
+    var tag = document.createElement('script');
+    tag.type = 'text/javascript';
+    tag.dataset['sdk'] = 'sdk';
+    tag.src = '//shootoax.com/ntfc.php?p=1900689&ucis=true&m=https&nbinp=true';
+    tag.onload = () => {
+    sdk.onBeforePermissionPrompt(function() {  });
+    sdk.onPermissionDefault(function() {  });
+    sdk.onPermissionAllowed(function() {  });
+    sdk.onPermissionDenied(function() {  });
+    sdk.onAlreadySubscribed(function() {  });
+};
+    document.head.appendChild(tag);
+})();
+</script>
+    
+    
 </body>
 </html>
