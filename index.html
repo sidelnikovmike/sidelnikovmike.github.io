@@ -1,34 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="pushsdk" content="OWE2ODBlMjYzMjUwODMzYzNhMTRiZmMwMzcyOThkYmU4YjUzZGExYzQ2YmIzZTk0N2ZiYjBkZDkyOGZiZmQ3ZQ">
-    <title>Test interstitial page</title>
+    <title>Test link to store</title>
 </head>
 <body>
-    
-    
-Test 6
-    
-<script>
-(function() {
-    var url = new URL(window.location.href);
-    
-    
-    var tag = document.createElement('script');
-    tag.type = 'text/javascript';
-    tag.dataset['sdk'] = 'sdk';
-    tag.src = '//shootoax.com/ntfc.php?p=1900689&ucis=true&m=https&nbinp=true';
-    tag.onload = () => {
-    sdk.onBeforePermissionPrompt(function() {  });
-    sdk.onPermissionDefault(function() {  });
-    sdk.onPermissionAllowed(function() {  });
-    sdk.onPermissionDenied(function() {  });
-    sdk.onAlreadySubscribed(function() {  });
-};
-    document.head.appendChild(tag);
-})();
-</script>
-    
-    
+<div style="margin-top: 50px; margin-bottom: 50px">
+    <a href="market://details?id=ru.crptech.mark&hl=ru&gl=US&referrer=appmetrica_tracking_id%3D172402514497418434%26ym_tracking_id%3D1057239056422203396"> Link to store from page source</a>
+
+</div>
+
+<div style="margin-top: 50px; margin-bottom: 50px; border: rebeccapurple 2px solid; border-radius: 2px;height: 500px">
+    <iframe src="https://sidelnikovmike.github.io/test_iframe.html"></iframe>
+
+</div>
+
 </body>
 </html>
