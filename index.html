@@ -1,18 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Test 4 link to store</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram MiniApp</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
-<div style="margin-top: 50px; margin-bottom: 50px">
-    <a href="market://details?id=ru.crptech.mark&hl=ru&gl=US&referrer=appmetrica_tracking_id%3D172402514497418434%26ym_tracking_id%3D1057239056422203396"> Link to store from page source</a>
+<h1>Welcome to Telegram MiniApp</h1>
+<button onclick="sendMessage()">Send Message</button>
 
-</div>
+<script>
+    // Инициализация SDK Telegram Web Apps
+    const tg = window.Telegram.WebApp;
 
-<div style="margin-top: 50px; margin-bottom: 50px; border: rebeccapurple 2px solid; border-radius: 2px;height: 500px">
-    <iframe src="https://sidelnikovmike.github.io/test_iframe.html"></iframe>
+    // Функция для отправки сообщения пользователю через Web App
+    function sendMessage() {
+        tg.sendData("Hello from mini app!");  // Отправка данных в Telegram через Web App
+    }
 
-</div>
-
+    // Настройка интерфейса, можно изменить цвет
+    tg.MainButton.text = "Close";
+    tg.MainButton.show();
+</script>
 </body>
 </html>
