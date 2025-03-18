@@ -1,16 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Test 4 link to store</title>
+    <meta charset="UTF-8">
+    <title>Status</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <script src="https://code.iconify.design/1/1.0.5/iconify.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+
+    <style>
+
+
+    </style>
+
+    <script type="text/javascript">
+
+
+        function getStatus() {
+            var status;
+            $.ajax({
+                type: 'get',
+                url: 'https://qa-stats.propellerads.net/api/v1/health',
+                async: false,
+                dataType: 'json',
+                cache: false,
+                statusCode : {
+                    200: function (){
+                        status = "OK";
+                    }
+                },
+
+            });
+            return status;
+        }
+
+
+        $(document).ready(function () {
+            var status = getStatus()
+            $("#test_status").text(status);
+
+        });
+
+    </script>
 </head>
 <body>
-<div style="margin-top: 50px; margin-bottom: 50px">
-    <a href="market://details?id=ru.crptech.mark&hl=ru&gl=US&referrer=appmetrica_tracking_id%3D172402514497418434%26ym_tracking_id%3D1057239056422203396"> Link to store from page source</a>
 
-</div>
-
-<div style="margin-top: 50px; margin-bottom: 50px; border: rebeccapurple 2px solid; border-radius: 2px;height: 500px">
-    <iframe src="https://sidelnikovmike.github.io/test_iframe.html"></iframe>
+<div id="test_status">
 
 </div>
 
